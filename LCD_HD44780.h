@@ -21,8 +21,9 @@
 #define BUS_LINE  0x28//2 линии данных, 4 бита шина
 #define ON		  1//
 #define OFF		  0//
+
 //////////////////////////////////////функции///////////////////////////////
 void LCD_init();//
 void LCD_write(uint8_t data, uint8_t BIT_RS);//
-void CLEAR_BIT(uint8_t PORTX, uint8_t PX);//
-void SET_BIT(uint8_t PORTX, uint8_t PX);//
+void LCD_read_BF();//
+void LCD_write_adress(uint8_t data, uint8_t adress);//
