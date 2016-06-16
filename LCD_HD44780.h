@@ -18,15 +18,12 @@
 #define BF        PA7//флаг занятости если 1 то занят дисплей если 0 то свободен
 #define RS_COM    0//передаем команду
 #define RS_DATA   1//передаем данные
-#define ON		  1//включение 
-#define OFF		  0//выключение
 #define BUS_LINE  0x28//2 линии данных, 4 бита шина
-#define SEC_LINE  0xA8//
-
+#define ON		  1//
+#define OFF		  0//
 
 //////////////////////////////////////функции///////////////////////////////
-void LCD_init();//функция инициализации дисплея 
-void LCD_write(uint8_t data, uint8_t BIT_RS);//функция записи в дисплей
-void LCD_read_BF();//функция чтения флага BF готовности из дисплея на данном железе НЕ РАБОТАЕТ!!!делаем через delay)))
-void LCD_write_adress(uint8_t data, uint8_t adress);//функция записи в дисплей по конкретному адресу
-void LCD_write_str(int8_t *string);//вывод строки на дисплей
+void LCD_init();//
+void LCD_write(uint8_t data, uint8_t BIT_RS);//
+void LCD_read_BF();//
+void LCD_write_adress(uint8_t data, uint8_t adress);//
