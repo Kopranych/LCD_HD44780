@@ -8,9 +8,9 @@ int main()
 {
 	LCD_init();
 
-	LCD_write_str("Ho are you?");
+	LCD_write_str("Hi DIMON!");
 
-	LCD_write(SEC_LINE,RS_COM);//переключение на нижнюю строку
+	line_wrapping();//переключение на нижнюю строку
 
-	LCD_write_str("I am Ilya!");
+	LCD_write_str("How are you?");
 }

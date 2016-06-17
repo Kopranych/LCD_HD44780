@@ -13,9 +13,13 @@ void LCD_init()
 	DDR_DATA |= 0xF0;//
 	PORT_DATA |= 0xF0;//
 	DDR_SIG |= (ON<<E)|(ON<<RW)|(ON<<RS);//
-	PORT_SIG |= (ON<<E)|(ON<<RW)|(ON<<RS);//
-//	_delay_ms(40);
+	PORT_SIG |= (ON<<E)|(ON<<RS);//
+	PORT_SIG &= ~(ON<<RW);
+	_delay_ms(40);
 	LCD_write(BUS_LINE,RS_COM);//
+	LCD_write(BUS_LINE,RS_COM);
+	LCD_write(BUS_LINE,RS_COM);
+	LCD_write(BUS_LINE,RS_COM);
 	LCD_write(0x01,RS_COM);//
 	LCD_write(0x06,RS_COM);//
 	LCD_write(0x06,RS_COM);//
@@ -85,6 +89,11 @@ void LCD_write_str(int8_t *string)
 		LCD_write(*string,RS_DATA);
 		string++;
 	}
+}
+
+void line_wrapping()
+{
+	LCD_write(SEC_LINE,RS_COM);
 }
 
 
