@@ -6,7 +6,7 @@
 #include <stdint.h>
 
 ////////////////////////переопределения////////////////////////////////////////
-#define F_CPU 8000000L
+//#define F_CPU 8000000L
 #define PORT_SIG  PORTB//порт управления
 #define DDR_SIG   DDRB//
 #define PIN_SIG   PINB//
@@ -23,6 +23,7 @@
 #define OFF		  0//выключение
 #define BUS_LINE  0x28//2 линии данных, 4 бита шина
 #define SEC_LINE  0xA8//
+#define FIRS_LINE 0x80//
 
 
 //////////////////////////////////////функции///////////////////////////////
@@ -31,4 +32,5 @@ void LCD_write(uint8_t data, uint8_t BIT_RS);//функция записи в дисплей
 void LCD_read_BF();//функция чтения флага BF готовности из дисплея на данном железе НЕ РАБОТАЕТ!!!делаем через delay)))
 void LCD_write_adress(uint8_t data, uint8_t adress);//функция записи в дисплей по конкретному адресу
 void LCD_write_str(int8_t *string);//вывод строки на дисплей
-void line_wrapping();//переключение на нижнюю строку
+void line_wrapping(int8_t number);//переключение на нижнюю строку
+void clean_display();//очистка дисплея
