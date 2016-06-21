@@ -22,15 +22,17 @@
 #define ON		  1//включение 
 #define OFF		  0//выключение
 #define BUS_LINE  0x28//2 линии данных, 4 бита шина
-#define SEC_LINE  0xA8//
-#define FIRS_LINE 0x80//
-
-
+#define SEC_LINE  0xA8//Вторая линия первый символ
+#define FIRS_LINE 0x80//Первая линия первый символ
+#define FIRST	  0x80//Адрес первой ячейки 
+#define FOURTH	  0x83//Адрес четвертой ячейки	  
+#define SEVENTH	  0x86//Адрес седьмой ячейки
 //////////////////////////////////////функции///////////////////////////////
 void LCD_init();//функция инициализации дисплея 
 void LCD_write(uint8_t data, uint8_t BIT_RS);//функция записи в дисплей
 void LCD_read_BF();//функция чтения флага BF готовности из дисплея на данном железе НЕ РАБОТАЕТ!!!делаем через delay)))
 void LCD_write_adress(uint8_t data, uint8_t adress);//функция записи в дисплей по конкретному адресу
 void LCD_write_str(int8_t *string);//вывод строки на дисплей
-void line_wrapping(int8_t number);//переключение на нижнюю строку
+void line_wrapping(int8_t number);//переключение на нужную строку
 void clean_display();//очистка дисплея
+void kursor_adress(uint8_t adress);//установка курсора на нужный адрес

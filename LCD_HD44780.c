@@ -106,6 +106,11 @@ void clean_display()
 	LCD_write(0x01,RS_COM);
 }
 
+void kursor_adress(uint8_t adress)
+{
+		LCD_write(adress, RS_COM);
+}
+
 void LCD_read_BF()
 {
 	uint8_t tmp = 0;
